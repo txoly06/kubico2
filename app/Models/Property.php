@@ -10,7 +10,7 @@ class Property extends Model
     use HasFactory;
     protected $fillable = [
         'user_id', 'title' , 'description', 'price', 'address', 
-        'type', 'status', 'quartos', 'banheiros', 'area'
+        'type', 'status', 'quartos', 'banheiros', 'area','image'
     ];
 
     public function user(){
@@ -20,4 +20,9 @@ class Property extends Model
     public function favoritedBy(){
         return $this->belongsToMany(User::class, 'favorites');
     }
+//Relacionamento com a nova tabela de Imagens
+    public function images()
+{
+    return $this->hasMany(PropertyImage::class);
+}
 }

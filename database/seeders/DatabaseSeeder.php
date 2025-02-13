@@ -19,9 +19,12 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         //criando papel do adm
-       // $adminRole = Role::create(['name' => 'admin']);
-       $this->call([
+       //$adminRole = Role::create(['name' => 'admin']);
+       /*$this->call([
         RolesAndPermissionsSeeder::class,
+        ]);*/
+        $this->call([
+            AdminUserSeeder::class,
         ]);
        // $user = User::where('email', 'admin@seusistema.com')->first();
         //$user->assignRole('admin');
